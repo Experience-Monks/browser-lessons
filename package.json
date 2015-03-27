@@ -1,0 +1,40 @@
+{
+  "name": "browser-lessons",
+  "version": "1.0.0",
+  "description": "This is a module which can be used for workshops or lessons based on browsers",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Mikko Haapoja",
+    "email": "me@mikkoh.com",
+    "url": "https://github.com/mikkoh"
+  },
+  "dependencies": {
+    "browserify": "^9.0.3",
+    "cpr": "^0.4.0",
+    "dstruc": "^0.1.2",
+    "express": "^4.12.3",
+    "getport": "^0.1.0",
+    "handlebars": "^3.0.1",
+    "marked": "^0.3.3",
+    "minimist": "^1.1.1",
+    "open": "0.0.5"
+  },
+  "devDependencies": {
+    "rimraf": "^2.3.2"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "workshopper,lessons,browser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Jam3/browser-lessons.git"
+  },
+  "homepage": "https://github.com/Jam3/browser-lessons",
+  "bugs": {
+    "url": "https://github.com/Jam3/browser-lessons/issues"
+  }
+}
