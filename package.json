@@ -16,6 +16,7 @@
     "express": "^4.12.3",
     "getport": "^0.1.0",
     "handlebars": "^3.0.1",
+    "less": "^2.4.0",
     "marked": "^0.3.3",
     "minimist": "^1.1.1",
     "open": "0.0.5"
