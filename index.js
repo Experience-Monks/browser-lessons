@@ -16,6 +16,8 @@ module.exports = function(settings) {
 	s.name = s.name || 'in settings pass name';
 	s.description = s.description || 'in settings pass description';
 
+	console.log(s.pathModule);
+
 	s.lessons = getLessons(s.pathLessons);
 
 	// copy practice and solution files to s.out

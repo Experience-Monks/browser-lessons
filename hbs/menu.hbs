@@ -1,9 +1,9 @@
-<h1>Lessons</h1>
-<ul>
+<h1 id="bl-lessons">Lessons</h1>
+<ul id="bl-menu">
 {{#if showBack}}
-	<li><a href="/">Home</a></li>
+	<li class="bl-menuItem"><a href="/">Home</a></li>
 {{/if}}
 {{#each lessons}}
-	<li><a href="/{{this}}/">{{this}}</a></li>
+	<li class="bl-menuItem"><a href="/{{this}}/">{{this}}</a></li>
 {{/each}}
 </ul>
