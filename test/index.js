@@ -18,7 +18,13 @@ fs.mkdir(testOutPath, function() {
 
 		name: 'some amazing lesson',
 		description: 'some description',
-		pathLessons: path.join('test', 'lessons')
+		pathLessons: path.join('test', 'lessons'),
+		routes: {
+
+			'/somethingSpecial': function(req, res) {
+				res.send('something special');
+			}
+		}
 	});
 });
 
