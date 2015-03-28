@@ -16,6 +16,8 @@ fs.mkdir(testOutPath, function() {
 
 	browserLessons( {
 
+		name: 'some amazing lesson',
+		description: 'some description',
 		pathLessons: path.join('test', 'lessons')
 	});
 });
