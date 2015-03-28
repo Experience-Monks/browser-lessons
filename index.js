@@ -11,6 +11,7 @@ module.exports = function(settings) {
 	var s = settings = settings || {};
 
 	s.out = s.out || args.out || '.';
+	s.pathModule = path.resolve(__dirname);
 	s.pathLessons = path.resolve(s.pathLessons || path.join('lessons'));
 	s.name = s.name || 'in settings pass name';
 	s.description = s.description || 'in settings pass description';
