@@ -1,4 +1,4 @@
-## This is from markdown
+# This is from markdown
 
 ![Amazing Image](images/test.jpg)
 
