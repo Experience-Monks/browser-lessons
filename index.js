@@ -8,10 +8,16 @@ var copySolutionsAndPractice = require('./lib/copySolutionsAndPractice');
 
 module.exports = function(settings) {
 
-	var args = minimist(process.argv);
+	var args = minimist(process.argv, {
+		boolean: [
+			"doOpen"
+		]
+	});
+
 	var s = settings = settings || {};
 
 	s.out = s.out || args.out || '.';
+	s.doOpen = s.doOpen || args.doOpen;
 	s.pathModule = path.resolve(__dirname);
 	s.pathLessons = path.resolve(s.pathLessons || path.join('lessons'));
 	s.name = s.name || 'in settings pass name';
@@ -43,14 +49,12 @@ module.exports = function(settings) {
 		colorBorderPre: '#EF92AE'
 	}, s.styles);
 
-	console.log(s.pathModule);
-
 	s.lessons = getLessons(s.pathLessons);
 
 	// copy practice and solution files to s.out
 	copySolutionsAndPractice(s, function() {
 
 		// start the server
-		server(s);	
+		server(s);
 	});
 };

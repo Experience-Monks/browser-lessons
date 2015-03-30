@@ -2,6 +2,7 @@ var path = require('path');
 
 var getExpress = require('./lib/getExpress');
 var getport = require('getport');
+var open = require('open');
 
 module.exports = function(settings) {
 
@@ -31,4 +32,8 @@ function startExpress(s) {
 	app.listen(s.port);
 
 	console.log('Lessons are running at http://localhost:' + s.port);
+
+	if(s.doOpen) {
+		open('http://localhost:' + s.port);
+	}
 }
