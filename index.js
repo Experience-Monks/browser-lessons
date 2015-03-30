@@ -29,7 +29,7 @@ module.exports = function(settings) {
 		colorBGInlineCode: '#3d3451',
 		
 		colorBGMenu: '#121018',
-		colorMenu: '#E0DCEB',
+		colorMenu: '#9D93B6',
 
 		colorBorderMenuEven: '#94F0D9',
 		colorBorderMenuOdd: '#94F0D9',
