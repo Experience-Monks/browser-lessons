@@ -97,6 +97,8 @@ You will need to create some lessons folders and files. Typically it would look 
 /lessons
 ----/1- Folder For First Part Of Lesson
 --------index.md or index.html
+--------practice.js
+--------solution.js
 --------/practice
 ----------------index.html
 ----------------index.js
@@ -131,6 +133,28 @@ To note you can create files and folders inside your lessons folders which will 
 ### index.md or index.html
 
 In this file you should write information about what you're trying to teach. This file can be markdown or html both will render just fine.
+
+### practice.js and solution.js
+
+There might be cases where you want to keep the users generated `/practice` and `/solution` files very clean and keep things like "testing" the users solution in an external file. This is when you'd define a `practice.js` file in the root of your lesson. This file will `require` in the users `/practice/index.js` file. Your `practice.js` file might look something like this:
+
+```javascript
+var usersExport = require('usersExport');
+
+usersExport( function(value) {
+
+    // the user did it right
+    if(value == '10') {
+
+        console.log('you got it right');
+    // the user did it wrong
+    } else {
+
+        console.log('you got it wrong');
+    }
+});
+```
+
 
 ### /practice
 
