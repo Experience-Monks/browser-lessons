@@ -1,7 +1,115 @@
-@import "@{baseURL}less/reset";
+@import "reset";
+
+.menu(@borderColorEven, @borderColorOdd) {
+
+	li {
+
+		list-style-type: none;
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 10px 10px 10px 10px;
+			background: @colorBGMenu;
+			color: @colorMenu;
+			transition: padding-left 0.1s ease,
+						border-left 0.1s ease;
+			border-left: 5px solid;
+		}
+
+		a:hover {
+
+			padding-left: 13px;
+			animation-name: rollOver;
+			animation-duration: 0.25s;
+			border-left: 10px solid;
+		}
+	}
+
+	li:nth-child(odd) {
+
+		a {
+			border-color: @borderColorEven;
+		}
+	}
+
+	li:nth-child(even) {
+
+		a {
+			border-color: @borderColorOdd;
+		}
+	}
+}
+
+.menuHeading(@borderColor) {
+
+	margin-bottom: 0px;
+	padding-left: 10px;
+	border-left: 10px solid @borderColor;
+}
+
 
 body {
-	background: #FEFEFE;
-	color: #333;
+	background: @colorBG;
+	color: @colorText;
 	font-family: 'Titillium Web', sans-serif;
+	font-weight: lighter;
+	font-size: 15px;
 }
+
+pre {
+	margin: 20px;
+	padding: 10px;
+	background: @colorBGPre;
+
+	border-left: 2px solid @colorBorderPre;
+}
+
+p code {
+	background: @colorBGInlineCode;
+	color: @colorInlineCode;
+	padding: 5px 5px 5px 5px;	
+}
+
+em {
+	font-weight: 400;
+	color: @colorBold;
+}
+
+p {
+	margin: 20px;
+	line-height: 2.0;
+}
+
+h1, h2, h3, h4 {
+	padding: 10px;
+	margin-bottom: 20px;
+	color: @colorHeading;
+}
+
+h1, h2 {
+	background: @colorBGHeading;
+	border-left: 5px solid @colorBorderPre;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+
+h2, h3 {
+
+	font-size: 25px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h3, h4 {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+@import "menu";
+@import "practiceSolution";
