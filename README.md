@@ -142,6 +142,11 @@ You can also add more files inside this folder which will be served if need be j
 
 The solution folder should mirror your `/practice` folder but should contain the completed solution.
 
+## Example In Browser
+
+This is what lessons will look like in browser by default:
+![browser-lessons](images/darkScheme.jpg)
+
 
 
 ## License
