@@ -1,1 +1,4 @@
-console.log('lesson 1 practice');
+module.exports = function(cb) {
+
+	cb('THIS IS THE PRACTICE');
+};

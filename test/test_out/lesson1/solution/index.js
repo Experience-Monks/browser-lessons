@@ -1,1 +1,4 @@
-console.log('lesson 1 solution');
+module.exports = function(cb) {
+
+	cb('THIS IS THE SOLUTION');
+};
