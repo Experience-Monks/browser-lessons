@@ -2,6 +2,8 @@
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
+![browser-lessons](images/darkScheme.jpg)
+
 This is a module which can be used for workshops or lessons based on browsers.
 
 browser-lessons creates a structure which can be used to teach concepts within the browser similar to the way the [workshopper](https://www.npmjs.com/package/workshopper) module does.
@@ -37,56 +39,55 @@ var browserLessons = require('browser-lessons');
 
 browserLessons( {
 
-    // pathLessons is required it should point to the folder
-    // where lesson files live. default: './lessons/'
-    pathLessons: path.resolve('lessons'),
+  // pathLessons is required it should point to the folder
+  // where lesson files live. default: './lessons/'
+  pathLessons: path.resolve('lessons'),
 
-    // name of your lesson it will be used on the index page
-    name: 'name of your lesson',
+  // name of your lesson it will be used on the index page
+  name: 'name of your lesson',
 
-    // a description of your lesson it will be used on the index page
-    description: 'description for what you want to teach',
+  // a description of your lesson it will be used on the index page
+  description: 'description for what you want to teach',
 
-    // if you don't want browser-lessons to automatically open the
-    // lesson in the browser pass false
-    doOpen: true,
+  // if you don't want browser-lessons to automatically open the
+  // lesson in the browser pass false
+  doOpen: true,
 
-    // if you want to add special handling for files you can do it
-    // here
-    routes: {
+  // if you want to add special handling for files you can do it
+  // here
+  routes: {
 
-        '/somethingSpecial': function(req, res) {
-            res.send('something special');
-        }
-    },
-
-    // if you want to override colours which browser-lessons uses
-    // pass in a styles object
-    styles: {
-
-        colorBG: '#121018',
-        colorText: '#7c7491',
-        colorBGHeading: '#1E1A29',
-        colorHeading: '#9d93b6',
-        colorBold: '#f191ae',
-
-        colorInlineCode: '#e1f191',
-        colorBGInlineCode: '#3d3451',
-        
-        colorBGMenu: '#121018',
-        colorMenu: '#9D93B6',
-
-        colorBorderMenuEven: '#94F0D9',
-        colorBorderMenuOdd: '#94F0D9',
-        colorBorderHeadingMenu: '#94F0D9',
-
-        colorBorderPracticeOdd: '#E1F096',
-        colorBorderPracticeEven: '#E1F096',
-        colorBorderHeadingPractice: '#E1F096',
-        
-        colorBGPre: '#1e1a28',
-        colorBorderPre: '#EF92AE'
+    '/somethingSpecial': function(req, res) {
+        res.send('something special');
     }
+  },
+
+  // if you want to override colours which browser-lessons uses
+  // pass in a styles object
+  styles: {
+    colorBG: '#121018',
+    colorText: '#7c7491',
+    colorBGHeading: '#1E1A29',
+    colorHeading: '#9d93b6',
+    colorBold: '#f191ae',
+
+    colorInlineCode: '#e1f191',
+    colorBGInlineCode: '#3d3451',
+    
+    colorBGMenu: '#121018',
+    colorMenu: '#9D93B6',
+
+    colorBorderMenuEven: '#94F0D9',
+    colorBorderMenuOdd: '#94F0D9',
+    colorBorderHeadingMenu: '#94F0D9',
+
+    colorBorderPracticeOdd: '#E1F096',
+    colorBorderPracticeEven: '#E1F096',
+    colorBorderHeadingPractice: '#E1F096',
+    
+    colorBGPre: '#1e1a28',
+    colorBorderPre: '#EF92AE'
+  }
 });
 ```
 
@@ -143,15 +144,15 @@ var usersExport = require('usersExport');
 
 usersExport( function(value) {
 
-    // the user did it right
-    if(value == '10') {
+  // the user did it right
+  if(value == '10') {
 
-        console.log('you got it right');
-    // the user did it wrong
-    } else {
+      console.log('you got it right');
+  // the user did it wrong
+  } else {
 
-        console.log('you got it wrong');
-    }
+      console.log('you got it wrong');
+  }
 });
 ```
 
@@ -166,12 +167,29 @@ You can also add more files inside this folder which will be served if need be j
 
 The solution folder should mirror your `/practice` folder but should contain the completed solution.
 
-## Example In Browser
+## `var testOut = require('browser-lessons/test-out')`
 
-This is what lessons will look like in browser by default:
-![browser-lessons](images/darkScheme.jpg)
+This is a module which can be used when writing practice files for lessons. It watches [tap/tape](https://www.npmjs.com/package/tape) output to `console.log` intercepts it and renders in a box in the bottom left of the users screen.
 
+It looks like this:
+![require('browser-lessons/test-out')](images/tapOut.jpg)
 
+### Usage example
+```javascript
+var usersExport = require('usersExport');
+var test = require('tape');
+var testOut = require('browser-lessons/test-out');
+
+test('test if value was correct from users practice file', function(t) {
+  
+  usersExport( function(value) {
+    t.equal(value, 10, 'the value returned was 10');
+    t.end();
+  });  
+});
+```
+
+Most of the time you'll simply just require `require('browser-lessons/test-out')` and write tap/tape based tests.
 
 ## License
 

@@ -1,14 +1,27 @@
 var usersExport = require('usersExport');
+var testOut = require('../../../test-out');
+var test = require('tape');
 
-usersExport( function(value) {
-
-	// the user did it right
-	if(value == '10') {
-
-		console.log('you got it right');
-	// the user did it wrong
-	} else {
-
-		console.log('you got it wrong. you\'re value was', value);
+var testCount = 0;
+var tests = [
+	function(t, value) {
+		t.equal(value, 10, 'the value was 10');
+	},
+	function(t, value) {
+		t.equal(value, 15, 'the value was 15');
+	},
+	function(t, value) {
+		t.equal(value, 20, 'the value was 20');
+		t.end();
 	}
+];
+
+test('testing returned values', function(t) {
+
+	usersExport(function(value) {
+
+		tests[ testCount ](t, value);
+
+		testCount++;
+	});
 });
