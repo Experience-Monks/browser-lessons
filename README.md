@@ -24,13 +24,12 @@ Ensure you add the following to your `package.json`:
 }
 ```
 
-The following will make a binary command line application which users can run to view your lesson. Make sure to add:
+The following will make a binary command line application which users can run to view your lesson. Add the following to the top of your bin js file:
 ```
 #!/usr/bin/env node
 ```
-To the top of your main js file.
 
-This is how you'd use browser-lessons to create your own lesson applications:
+This is how you'd use browser-lessons to create your own lesson applications. All options sent to the browserLessons are option but are documented here:
 ```javascript
 #!/usr/bin/env node
 
@@ -96,25 +95,25 @@ browserLessons( {
 You will need to create some lessons folders and files. Typically it would look something like this:
 ```
 /lessons
-----/1- Folder For First Part Of Lesson
---------index.md or index.html
---------practice.js
---------solution.js
---------/practice
-----------------index.html
-----------------index.js
---------/solution
-----------------index.html
-----------------index.js
+--/1- Folder For First Part Of Lesson
+----index.md or index.html
+----practice.js
+----solution.js
+----/practice
+--------index.html
+--------index.js
+----/solution
+--------index.html
+--------index.js
 
-----/2- Folder For Second Part Of Lesson
---------index.md or index.html
---------/practice
-----------------index.html
-----------------index.js
---------/solution
-----------------index.html
-----------------index.js
+--/2- Folder For Second Part Of Lesson
+----index.md or index.html
+----/practice
+--------index.html
+--------index.js
+----/solution
+--------index.html
+--------index.js
 ```
 
 ### /lessons
@@ -122,10 +121,10 @@ You will need to create some lessons folders and files. Typically it would look 
 Your lesson folder will contain all the lesson parts. For instance if you were teaching about jQuery your lesson folders could look something like this:
 ```
 /lessons
-----/1- Selectors
-----/2- CSS
-----/3- Events
-----/4- Ajax
+--/1- Selectors
+--/2- CSS
+--/3- Events
+--/4- Ajax
 ```
 
 To note you can create files and folders inside your lessons folders which will be served by the browser-lessons server. For instances you might want to create an images folder inside your `/1- Selectors` lesson folder. It would simply look like this `/1- Selectors/images/someImage.jpg`.
@@ -167,9 +166,10 @@ You can also add more files inside this folder which will be served if need be j
 
 The solution folder should mirror your `/practice` folder but should contain the completed solution.
 
-## `var testOut = require('browser-lessons/test-out')`
 
-This is a module which can be used when writing practice files for lessons. It watches [tap/tape](https://www.npmjs.com/package/tape) output to `console.log` intercepts it and renders in a box in the bottom left of the users screen.
+### `var testOut = require('browser-lessons/test-out')`
+
+This is a module which can be used when writing [practice files](#practicejs-and-solutionjs) for lessons. It watches [tap/tape](https://www.npmjs.com/package/tape) output to `console.log` intercepts it and renders in a box in the bottom left of the users screen.
 
 It looks like this:
 ![require('browser-lessons/test-out')](images/tapOut.jpg)
