@@ -1,6 +1,6 @@
-var usersFunction = require('usersFunction');
+var usersExport = require('usersExport');
 
-usersFunction( function(value) {
+usersExport( function(value) {
 
 	console.log('got', value);
 });
