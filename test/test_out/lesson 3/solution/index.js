@@ -1,1 +1,0 @@
-console.log('lesson 1 solution');
