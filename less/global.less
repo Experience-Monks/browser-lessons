@@ -55,6 +55,8 @@ body {
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: lighter;
 	font-size: 15px;
+	max-width: 900px;
+	margin: auto;
 }
 
 pre {
@@ -65,10 +67,16 @@ pre {
 	border-left: 2px solid @colorBorderPre;
 }
 
-p code {
-	background: @colorBGInlineCode;
-	color: @colorInlineCode;
-	padding: 5px 5px 5px 5px;	
+li, p {
+	code {
+		background: @colorBGInlineCode;
+		color: @colorInlineCode;
+		padding: 5px 5px 5px 5px;
+
+		&.hljs {
+			padding: 5px 5px 5px 5px;
+		}
+	}
 }
 
 em {
@@ -110,6 +118,17 @@ h3, h4 {
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
+
+ol, ul {
+	padding-left: 40px;
+	li {
+		padding-bottom: 10px;
+		line-height: 2;
+	}
+}
+
+
+
 
 @import "menu";
 @import "practiceSolution";
