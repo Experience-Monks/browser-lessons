@@ -67,13 +67,15 @@ pre {
 	border-left: 2px solid @colorBorderPre;
 }
 
-p code {
-	background: @colorBGInlineCode;
-	color: @colorInlineCode;
-	padding: 5px 5px 5px 5px;
-
-	&.hljs {
+li, p {
+	code {
+		background: @colorBGInlineCode;
+		color: @colorInlineCode;
 		padding: 5px 5px 5px 5px;
+
+		&.hljs {
+			padding: 5px 5px 5px 5px;
+		}
 	}
 }
 
