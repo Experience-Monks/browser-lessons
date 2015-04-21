@@ -35,7 +35,7 @@
     "test": "nodemon test/ -e js,hbs,less,md,html -i test/test_out/ -- --out test/test_out/ --doOpen false"
   },
   "keywords": [
-    "workshopper,lessons,browser"
+    "workshopper,lessons,lesson,browser,tutorial,learn"
   ],
   "repository": {
     "type": "git",
